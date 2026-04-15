@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Navy background -->
+  <rect width="512" height="512" rx="80" fill="#001E62"/>
+  <!-- Gold "26" text -->
+  <text x="256" y="320" font-family="Arial Black, Arial" font-weight="900" font-size="260" fill="#f1c40f" text-anchor="middle">26</text>
+  <!-- Small soccer ball at top -->
+  <circle cx="256" cy="100" r="48" fill="white"/>
+  <path d="M256 52 L270 78 L298 78 L276 94 L284 120 L256 104 L228 120 L236 94 L214 78 L242 78 Z" fill="#001E62"/>
+</svg>
