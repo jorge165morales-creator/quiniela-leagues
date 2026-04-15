@@ -12,3 +12,10 @@ export function createServiceClient() {
     auth: { persistSession: false },
   });
 }
+
+// Convenience singleton for API routes
+export const supabaseService = createClient(
+  supabaseUrl,
+  process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
+  { auth: { persistSession: false } }
+);

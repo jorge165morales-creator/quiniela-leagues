@@ -40,15 +40,16 @@ export default function NavBar() {
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
           <Link href="/" className="hover:text-gray-900 transition-colors">Inicio</Link>
           <Link href="/leaderboard" className="hover:text-gray-900 transition-colors">Tabla</Link>
-          <Link href="/rondas" className="hover:text-gray-900 transition-colors">Rondas</Link>
-          <Link href="/ultimo-cero" className="hover:text-gray-900 transition-colors">Último 0</Link>
-          <Link href="/goles" className="hover:text-gray-900 transition-colors">Goles</Link>
+          <Link href="/create-league" className="hover:text-gray-900 transition-colors">Crear liga</Link>
           <Link href="/reglas" className="hover:text-gray-900 transition-colors">Reglas</Link>
 
           {username ? (
             <>
               <Link href="/predictions" className="hover:text-gray-900 transition-colors">
                 Mis predicciones
+              </Link>
+              <Link href="/my-league" className="hover:text-gray-900 transition-colors">
+                Mi liga
               </Link>
               <div className="flex items-center gap-3 ml-2">
                 <span className="text-gray-700 font-mono text-xs bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">

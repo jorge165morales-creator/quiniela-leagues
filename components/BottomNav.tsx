@@ -5,13 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const tabs = [
-  { href: "/",            label: "Inicio",     icon: "🏠" },
-  { href: "/leaderboard", label: "Tabla",      icon: "📊" },
-  { href: "/predictions", label: "Quiniela",   icon: "✏️" },
-  { href: "/rondas",      label: "Rondas",     icon: "🏅" },
-  { href: "/goles",       label: "Goles",      icon: "⚽" },
-  { href: "/ultimo-cero", label: "Último 0",   icon: "🏆" },
-  { href: "/reglas",      label: "Reglas",     icon: "📋" },
+  { href: "/",              label: "Inicio",    icon: "🏠" },
+  { href: "/leaderboard",   label: "Tabla",     icon: "📊" },
+  { href: "/predictions",   label: "Quiniela",  icon: "✏️" },
+  { href: "/create-league", label: "Crear liga", icon: "➕" },
+  { href: "/reglas",        label: "Reglas",    icon: "📋" },
 ];
 
 export default function BottomNav() {

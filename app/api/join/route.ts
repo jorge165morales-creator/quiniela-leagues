@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   // Find league by invite code
   const { data: league, error: leagueError } = await supabase
     .from("leagues")
-    .select("id, name, predictions_locked")
+    .select("id, name, predictions_locked, max_members")
     .eq("invite_code", invite_code)
     .single();
 
@@ -49,6 +49,19 @@ export async function POST(req: NextRequest) {
       league_name: league.name,
       predictions_locked: league.predictions_locked,
     });
+  }
+
+  // Enforce member cap
+  const { count: memberCount } = await supabase
+    .from("players")
+    .select("id", { count: "exact", head: true })
+    .eq("league_id", league.id);
+
+  if (memberCount !== null && memberCount >= (league.max_members ?? 10)) {
+    return NextResponse.json(
+      { error: `Esta liga está llena (máximo ${league.max_members} participantes).` },
+      { status: 403 }
+    );
   }
 
   // Add player to league

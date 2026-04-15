@@ -21,10 +21,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Jugador no encontrado." }, { status: 404 });
   }
 
-  // Check if league predictions are locked
+  // Check if league predictions are locked + fetch anti_algo setting
   const { data: league } = await supabase
     .from("leagues")
-    .select("predictions_locked")
+    .select("predictions_locked, anti_algo")
     .eq("id", player.league_id)
     .single();
 
@@ -35,8 +35,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Anti-algorithmic rules — only enforced on full submit (submit: true)
-  if (submit) {
+  // Anti-algorithmic rules — only enforced on full submit AND when league has it enabled
+  if (submit && league?.anti_algo !== false) {
     const scorelineCounts: Record<string, number> = {};
     let drawCount = 0;
     for (const p of predictions) {
