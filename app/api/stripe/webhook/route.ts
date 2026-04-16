@@ -5,9 +5,6 @@ import { PlanTier } from "@/types";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2023-10-16" });
 
-// Disable body parsing — Stripe needs the raw body to verify signature
-export const config = { api: { bodyParser: false } };
-
 function generateInviteCode(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   return Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
