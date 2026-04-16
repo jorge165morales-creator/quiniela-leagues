@@ -125,7 +125,6 @@ export default function CreateLeaguePage() {
           <li className="flex gap-2"><span className="text-green-500 font-bold shrink-0">✓</span>Reglas personalizadas (texto libre)</li>
           <li className="flex gap-2"><span className="text-green-500 font-bold shrink-0">✓</span>Activar o desactivar validación anti-algorítmica</li>
           <li className="flex gap-2"><span className="text-green-500 font-bold shrink-0">✓</span>Cerrar predicciones cuando quieras</li>
-          <li className="flex gap-2"><span className="text-gray-300 font-bold shrink-0">✗</span>No incluye premios especiales (Rondas, Goles, Último 0)</li>
         </ul>
       </div>
 
